@@ -1,0 +1,30 @@
+{
+  "name": "bitcoinpricebrlbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc --build",
+    "build:debug": "rm -rf ./build.debug && tsc --sourceMap --outDir ./build.debug",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/twit": "^2.2.31",
+    "nodemon": "^2.0.4",
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "coingecko-api-v3": "^0.0.15",
+    "dotenv": "^8.2.0",
+    "twit": "^2.2.11"
+  }
+}
