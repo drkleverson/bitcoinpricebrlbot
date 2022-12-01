@@ -17,6 +17,4 @@ COPY . .
 # yarn and yarn build will install, build and remove dev dependencies
 RUN ssh-agent sh -c 'echo $SSH_KEY | base64 -d | ssh-add - ; yarn && yarn build'
 
-ENV NODE_ENV=production
-
 CMD yarn start
