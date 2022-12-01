@@ -1,8 +1,9 @@
-import Twit from 'twit'
+import Twit from "twit";
+import { env } from "../env";
 
 export const connection = new Twit({
-    consumer_key: process.env.consumer_key,
-    consumer_secret: process.env.consumer_secret,
-    access_token: process.env.access_token,
-    access_token_secret: process.env.access_token_secret,
-})
+  consumer_key: env.consumer_key,
+  consumer_secret: env.consumer_secret,
+  access_token: env.access_token,
+  access_token_secret: env.access_token_secret,
+});
