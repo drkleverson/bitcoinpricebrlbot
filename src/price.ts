@@ -3,7 +3,7 @@ import * as tools from "./tools";
 import axios from 'axios'
 import { env } from './env';
 
-(async () => {
+export default async () => {
   const result: any = await axios.get('/api/v3/simple/price', {
     baseURL: "https://api.coingecko.com",
     params: { ids: 'bitcoin', vs_currencies: 'brl,usd,eur', include_24hr_change: true },
@@ -24,4 +24,4 @@ variação 24 horas: ${negative + tools.moneyFormat(change)}%
   if (!env.isDev) {
     connection.post("statuses/update", { status: tweet });
   }
-})()
+}
