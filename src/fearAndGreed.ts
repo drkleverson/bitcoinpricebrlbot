@@ -8,6 +8,7 @@ const fearAndGreedResult = async () => {
     return response.data.data[0];
 }
 
+
 const indexDescription = [
     {
         description: 'ganância extrema 🤑🤑',
@@ -47,8 +48,7 @@ const indexDescription = [
     },
 ];
 
-
-(async () => {
+export default async () => {
     const result = await fearAndGreedResult()
     const findIndexResult = indexDescription.findIndex(description => result.value > description.gt)
 
@@ -68,4 +68,4 @@ ${descriptionResult.description}
     if (!env.isDev) {
         connection.post("statuses/update", { status: tweet });
     }
-})()
+}
