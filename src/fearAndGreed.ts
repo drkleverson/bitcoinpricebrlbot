@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import { connection } from "./connection/twitter";
 import axios from "axios";
+import { env } from './env';
 
 const fearAndGreedResult = async () => {
     const response = await axios.get('https://api.alternative.me/fng/');
@@ -64,7 +65,7 @@ ${descriptionResult.description}
 #bitcoin
 `
     console.log(tweet);
-    if (!process.env.isDev) {
+    if (!env.isDev) {
         connection.post("statuses/update", { status: tweet });
     }
 })()

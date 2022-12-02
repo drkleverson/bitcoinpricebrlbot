@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import * as tools from "./tools";
 import axios from 'axios'
+import { env } from './env';
 
 (async () => {
   const result: any = await axios.get('/api/v3/simple/price', {
@@ -20,7 +21,7 @@ variação 24 horas: ${negative + tools.moneyFormat(change)}%
 #bitcoin`;
 
   console.log(tweet);
-  if (!process.env.isDev) {
+  if (!env.isDev) {
     connection.post("statuses/update", { status: tweet });
   }
 })()

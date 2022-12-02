@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { connection } from "./connection/twitter";
 import axios from 'axios';
+import { env } from './env';
 
 (async () => {
     const result: any = await axios.get('/api/v3/coins/bitcoin', {
@@ -31,7 +32,7 @@ import axios from 'axios';
 
     console.log(tweet);
 
-    if (!process.env.isDev) {
+    if (!env.isDev) {
         await connection.post("statuses/update", { status: tweet });
     }
 })();
