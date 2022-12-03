@@ -3,7 +3,7 @@ import { connection } from "./connection/twitter";
 import axios from 'axios';
 import { env } from './env';
 
-(async () => {
+export default async () => {
     const result: any = await axios.get('/api/v3/coins/bitcoin', {
         baseURL: "https://api.coingecko.com",
         params: { sparkline: false, community_data: false, developer_data: false, localization: false, tickers: false },
@@ -35,4 +35,4 @@ import { env } from './env';
     if (!env.isDev) {
         await connection.post("statuses/update", { status: tweet });
     }
-})();
+};
