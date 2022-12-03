@@ -3,7 +3,7 @@ import fearAndGreed from './fearAndGreed'
 import price from './price'
 import statistics from './statistics'
 
-cron.schedule('* * * * *', price)
+cron.schedule('*/30 * * * *', price)
 
 cron.schedule('0 7 * * *', fearAndGreed, { timezone: "America/Sao_Paulo" })
 
