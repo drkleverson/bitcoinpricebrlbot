@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import { connection } from "./connection/twitter";
 import * as tools from "./tools";
 import axios from 'axios'
 import { env } from './env';
