@@ -7,7 +7,7 @@
     "build": "rm -rf ./dist && tsc --build",
     "build:debug": "rm -rf ./build.debug && tsc --sourceMap --outDir ./build.debug",
     "start": "node dist/cron.js",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/cron.ts"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +28,6 @@
     "dotenv": "^8.2.0",
     "envalid": "^7.3.1",
     "node-cron": "^3.0.2",
-    "twitter-api-sdk": "^1.2.1"
+    "twitter-api-v2": "^1.15.1"
   }
 }
