@@ -1,13 +1,13 @@
 declare global {
-    namespace NodeJS {
-        interface ProcessEnv {
-            isDev: boolean;
-            consumer_key: string;
-            consumer_secret: string;
-            access_token: string;
-            access_token_secret: string;
-        }
+  namespace NodeJS {
+    interface ProcessEnv {
+      isDev: boolean;
+      API_KEY: string;
+      API_KEY_SECRET: string;
+      ACCESS_TOKEN: string;
+      ACCESS_TOKEN_SECRET: string;
     }
+  }
 }
 
-export { }
+export {};

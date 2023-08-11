@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { connection } from "./connection/twitter";
+import { client } from "./connection/twitter";
 import * as tools from "./tools";
 import axios from 'axios'
 import { env } from './env';
@@ -23,6 +23,6 @@ variação 24 horas: ${negative + tools.moneyFormat(change)}%
 
   console.log(tweet);
   if (!env.isDev) {
-    connection.post("statuses/update", { status: tweet });
+    client.v2.tweet({ text: tweet });
   }
 }

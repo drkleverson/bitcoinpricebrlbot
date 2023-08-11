@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { connection } from "./connection/twitter";
+import { client } from "./connection/twitter";
 import axios from 'axios';
 import { env } from './env';
 
@@ -33,6 +33,6 @@ export default async () => {
     console.log(tweet);
 
     if (!env.isDev) {
-        await connection.post("statuses/update", { status: tweet });
+    client.v2.tweet({ text: tweet });
     }
 };
