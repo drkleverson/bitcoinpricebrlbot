@@ -1,71 +1,72 @@
-import 'dotenv/config'
-import { connection } from "./connection/twitter";
+import "dotenv/config";
+import { client } from "./connection/twitter";
 import axios from "axios";
-import { env } from './env';
+import { env } from "./env";
 
 const fearAndGreedResult = async () => {
-    const response = await axios.get('https://api.alternative.me/fng/');
-    return response.data.data[0];
-}
-
+  const response = await axios.get("https://api.alternative.me/fng/");
+  return response.data.data[0];
+};
 
 const indexDescription = [
-    {
-        description: 'ganância extrema 🤑🤑',
-        gt: 90
-    },
-    {
-        description: 'ganância extrema 🤑',
-        gt: 75
-    },
-    {
-        description: 'ganância 😎',
-        gt: 63
-    },
-    {
-        description: 'ganância 🙂',
-        gt: 54
-    },
-    {
-        description: 'neutro 😐',
-        gt: 46
-    },
-    {
-        description: 'medo 😨',
-        gt: 35
-    },
-    {
-        description: 'medo 😨',
-        gt: 25
-    },
-    {
-        description: 'medo extremo 😱',
-        gt: 10
-    },
-    {
-        description: 'medo extremo 😱😱',
-        gt: 0
-    },
+  {
+    description: "ganância extrema 🤑🤑",
+    gt: 90,
+  },
+  {
+    description: "ganância extrema 🤑",
+    gt: 75,
+  },
+  {
+    description: "ganância 😎",
+    gt: 63,
+  },
+  {
+    description: "ganância 🙂",
+    gt: 54,
+  },
+  {
+    description: "neutro 😐",
+    gt: 46,
+  },
+  {
+    description: "medo 😨",
+    gt: 35,
+  },
+  {
+    description: "medo 😨",
+    gt: 25,
+  },
+  {
+    description: "medo extremo 😱",
+    gt: 10,
+  },
+  {
+    description: "medo extremo 😱😱",
+    gt: 0,
+  },
 ];
 
 export default async () => {
-    const result = await fearAndGreedResult()
-    const findIndexResult = indexDescription.findIndex(description => result.value > description.gt)
+  const result = await fearAndGreedResult();
+  const findIndexResult = indexDescription.findIndex(
+    (description) => result.value > description.gt
+  );
 
-    const descriptionResult = indexDescription[findIndexResult]
-    let rangeBarArray = Array.from(Array(9), () => '─')
-    rangeBarArray[findIndexResult] = '●'
+  const descriptionResult = indexDescription[findIndexResult];
+  let rangeBarArray = Array.from(Array(9), () => "─");
+  rangeBarArray[findIndexResult] = "●";
 
-    const tweet = `nível de medo e ganância do mercado
+  const tweet = `nível de medo e ganância do mercado
 
-medo ${rangeBarArray.reverse().join('')} ganância
+medo ${rangeBarArray.reverse().join("")} ganância
 
 ${descriptionResult.description}
 
 #bitcoin
-`
-    console.log(tweet);
-    if (!env.isDev) {
-        connection.post("statuses/update", { status: tweet });
-    }
-}
+`;
+  console.log(tweet);
+  if (!env.isDev) {
+    client.v2.tweet({ text: tweet });
+  }
+};

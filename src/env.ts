@@ -3,8 +3,8 @@ import { cleanEnv, str } from "envalid";
 export const env = cleanEnv(process.env, {
   NODE_ENV: str({ choices: ["development", "test", "production", "staging"] }),
 
-  access_token: str(),
-  access_token_secret: str(),
-  consumer_key: str(),
-  consumer_secret: str(),
+  API_KEY: str(),
+  API_KEY_SECRET: str(),
+  ACCESS_TOKEN: str(),
+  ACCESS_TOKEN_SECRET: str(),
 });
