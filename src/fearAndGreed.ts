@@ -47,7 +47,7 @@ const indexDescription = [
   },
 ];
 
-export default async () => {
+(async () => {
   const result = await fearAndGreedResult();
   const findIndexResult = indexDescription.findIndex(
     (description) => result.value > description.gt
@@ -69,4 +69,4 @@ ${descriptionResult.description}
   if (!env.isDev) {
     client.v2.tweet({ text: tweet });
   }
-};
+})();

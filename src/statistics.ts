@@ -3,7 +3,7 @@ import { client } from "./connection/twitter";
 import axios from "axios";
 import { env } from "./env";
 
-export default async () => {
+(async () => {
   const result: any = await axios.get("/api/v3/coins/bitcoin", {
     baseURL: "https://api.coingecko.com",
     params: {
@@ -62,4 +62,4 @@ export default async () => {
   if (!env.isDev) {
     client.v2.tweet({ text: tweet });
   }
-};
+})();
