@@ -13,14 +13,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/dotenv": "^8.2.0",
     "@types/node": "^20.5.4",
     "@types/node-cron": "^3.0.6",
-    "@types/twit": "^2.2.31",
-    "nodemon": "^2.0.4"
-  },
-  "dependencies": {
     "axios": "^0.19.2",
     "coingecko-api-v3": "^0.0.15",
     "dotenv": "^8.2.0",
