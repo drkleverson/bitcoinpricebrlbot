@@ -2,6 +2,7 @@ name: tweet-statistics
 on:
   schedule:
     - cron: "0 20 * * *"
+    - timezone: "America/Sao_Paulo"
 jobs:
   build:
     runs-on: ubuntu-latest

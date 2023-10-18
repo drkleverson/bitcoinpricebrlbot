@@ -1,7 +1,8 @@
 name: tweet-fear-and-greed-index
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "0 8 * * *"
+    - timezone: "America/Sao_Paulo"
 jobs:
   build:
     runs-on: ubuntu-latest
