@@ -1,4 +1,4 @@
-name: tweet-price-cron-job
+name: post-price-cron-job
 on:
   schedule:
     - cron: "*/30 * * * *"
@@ -18,10 +18,12 @@ jobs:
       - name: yarn install, build and run
         env:
           NODE_ENV: ${{ secrets.NODE_ENV }}
-          API_KEY: ${{ secrets.API_KEY }}
-          API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_KEY_SECRET: ${{ secrets.X_API_KEY_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          BS_USERNAME: ${{ secrets.BS_USERNAME }}
+          BS_PASSWORD: ${{ secrets.BS_PASSWORD }}
         run: |
           yarn 
           yarn build

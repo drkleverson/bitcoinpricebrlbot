@@ -1,7 +1,7 @@
 import "dotenv/config";
-import { client } from "./connection/twitter";
+import { client as XClient } from "./connection/x";
+import { client as BSClient } from "./connection/bluesky";
 import axios from "axios";
-import { env } from "./env";
 
 const fearAndGreedResult = async () => {
   const response = await axios.get("https://api.alternative.me/fng/");
@@ -57,7 +57,7 @@ const indexDescription = [
   let rangeBarArray = Array.from(Array(9), () => "─");
   rangeBarArray[findIndexResult] = "●";
 
-  const tweet = `nível de medo e ganância do mercado
+  const post = `nível de medo e ganância do mercado
 
 medo ${rangeBarArray.reverse().join("")} ganância
 
@@ -65,6 +65,9 @@ ${descriptionResult.description}
 
 #bitcoin
 `;
-  console.log(tweet);
-  client.v2.tweet({ text: tweet });
+  console.log(post);
+
+  const bs = await BSClient();
+  bs.post({ text: post });
+  //XClient.v2.tweet({ text: post });
 })();

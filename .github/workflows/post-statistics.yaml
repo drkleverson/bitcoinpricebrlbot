@@ -1,7 +1,7 @@
-name: tweet-fear-and-greed-index
+name: post-statistics
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "0 20 * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,11 +18,13 @@ jobs:
       - name: yarn install, build and run
         env:
           NODE_ENV: ${{ secrets.NODE_ENV }}
-          API_KEY: ${{ secrets.API_KEY }}
-          API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_KEY_SECRET: ${{ secrets.X_API_KEY_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          BS_USERNAME: ${{ secrets.BS_USERNAME }}
+          BS_PASSWORD: ${{ secrets.BS_PASSWORD }}
         run: |
           yarn 
           yarn build
-          node dist/fearAndGreed.js
+          node dist/statistics.js
