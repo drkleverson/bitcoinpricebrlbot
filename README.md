@@ -1,3 +1,3 @@
-[![tweet-price-cron-job](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/tweet-price.yaml/badge.svg)](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/tweet-price.yaml)
-[![tweet-fear-and-greed-index](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/tweet-fear-and-greed-index.yaml/badge.svg)](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/tweet-fear-and-greed-index.yaml)
-[![tweet-statistics](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/tweet-statistics.yaml/badge.svg)](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/tweet-statistics.yaml)
+[![post-price-cron-job](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/post-price.yaml/badge.svg)](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/post-price.yaml)
+[![post-fear-and-greed-index](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/post-fear-and-greed-index.yaml/badge.svg)](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/post-fear-and-greed-index.yaml)
+[![post-statistics](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/post-statistics.yaml/badge.svg)](https://github.com/drkleverson/bitcoinpricebrlbot/actions/workflows/post-statistics.yaml)
