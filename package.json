@@ -15,8 +15,7 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/dotenv": "^8.2.0",
-    "@types/node-cron": "^3.0.6",
-    "@types/twit": "^2.2.31",
+    "@types/node": "^20.5.4",
     "nodemon": "^2.0.4",
     "ts-node": "^10.9.1",
     "tsc": "^2.0.4",
@@ -25,9 +24,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "coingecko-api-v3": "^0.0.15",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.3.1",
     "envalid": "^7.3.1",
-    "node-cron": "^3.0.2",
     "twitter-api-v2": "^1.15.1"
   }
 }

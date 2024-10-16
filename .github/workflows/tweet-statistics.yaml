@@ -1,7 +1,7 @@
-name: tweet-price-cron-job
+name: tweet-statistics
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 20 * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,4 +25,4 @@ jobs:
         run: |
           yarn 
           yarn build
-          node dist/price.js
+          node dist/statistics.js

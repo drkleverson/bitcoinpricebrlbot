@@ -66,7 +66,5 @@ ${descriptionResult.description}
 #bitcoin
 `;
   console.log(tweet);
-  if (!env.isDev) {
-    client.v2.tweet({ text: tweet });
-  }
+  client.v2.tweet({ text: tweet });
 })();

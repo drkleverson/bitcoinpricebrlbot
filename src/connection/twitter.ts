@@ -1,4 +1,4 @@
-import { TweetV2PostTweetResult, TwitterApi } from "twitter-api-v2";
+import { TwitterApi } from "twitter-api-v2";
 import { env } from "../env";
 
 export const client = new TwitterApi({
