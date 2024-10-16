@@ -1,7 +1,7 @@
 import "dotenv/config";
-import { client } from "./connection/twitter";
+import { client as XClient } from "./connection/x";
+import { client as BSClient } from "./connection/bluesky";
 import axios from "axios";
-import { env } from "./env";
 
 (async () => {
   const result: any = await axios.get("/api/v3/coins/bitcoin", {
@@ -55,9 +55,11 @@ import { env } from "./env";
     "pt-BR"
   )} de ${data.max_supply.toLocaleString("pt-BR")}`;
 
-  let tweet = `máxima 24hrs: ${max24hrs}\nmínima 24hrs: ${min24hrs}\n\nfornecimento:\n${supplyString}\n\ncap. de mercado:\n${marketcapChangeString}\n${marketcapString}\n\npreço:\n${priceChange7dString}\n${priceChange30dString}\n${priceChange60dString}\n${priceChange1yString}`;
+  let post = `máxima 24hrs: ${max24hrs}\nmínima 24hrs: ${min24hrs}\n\nfornecimento:\n${supplyString}\n\ncap. de mercado:\n${marketcapChangeString}\n${marketcapString}\n\npreço:\n${priceChange7dString}\n${priceChange30dString}\n${priceChange60dString}\n${priceChange1yString}`;
 
-  console.log(tweet);
+  console.log(post);
 
-  client.v2.tweet({ text: tweet });
+  const bs = await BSClient();
+  bs.post({ text: post });
+  XClient.v2.tweet({ text: post });
 })();
